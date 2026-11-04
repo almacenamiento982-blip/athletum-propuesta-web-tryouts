@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Propuesta Tryouts Athletum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--amarillo:#FFF200;--negro:#0b0b0b;--gris:#1a1a1a;--linea:#e3e3e3;--txt:#1d1d1d;--suave:#666;--dorado:#c9b27c;--nota:#fff8c4;--ok:#1f7a3a;--alerta:#b3261e}
+*{box-sizing:border-box}
+body{margin:0;background:#f4f4f2;color:var(--txt);font:15px/1.55 Montserrat,system-ui,sans-serif}
+a{color:inherit}
+img{max-width:100%;display:block}
+.envoltura{max-width:1100px;margin:0 auto;padding:0 16px}
+.franja{background:var(--negro);color:#fff;padding:14px 0;font-size:13px}
+.franja b{color:var(--amarillo)}
+h1,h2,h3{font-family:Oswald,Impact,sans-serif;font-weight:700;letter-spacing:.01em;line-height:1.15}
+.doc h2{font-size:28px;margin:48px 0 6px;text-transform:uppercase}
+.doc h2 small{display:block;font:600 12px Montserrat,sans-serif;color:var(--suave);letter-spacing:.08em;margin-bottom:4px}
+.doc .lead{color:var(--suave);margin:0 0 18px;max-width:780px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}
+.kpi{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:14px}
+.kpi .n{font:700 30px Oswald,sans-serif;line-height:1}
+.kpi .n.mal{color:var(--alerta)}
+.kpi .l{font-size:12.5px;color:var(--suave);margin-top:6px}
+.hallazgos{display:grid;gap:14px}
+.h{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:16px;display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:820px){.h.con-img{grid-template-columns:1.1fr .9fr}}
+.h h3{margin:0 0 6px;font-size:19px}
+.h p,.h ul{margin:0 0 8px}
+.h ul{padding-left:18px}
+.h .cap{border:1px solid var(--linea);border-radius:6px;max-height:340px;object-fit:cover;object-position:top;width:100%}
+.etq{display:inline-block;font:700 11px Montserrat,sans-serif;padding:2px 8px;border-radius:20px;background:#eee;color:#333;margin-right:6px;vertical-align:middle}
+.etq.alta{background:#fde2e0;color:var(--alerta)}
+.etq.media{background:#fff1c2;color:#7a5b00}
+.etq.conf{background:var(--nota);color:#6b5d00;border:1px dashed #c9b200}
+.fotos-viejas{display:flex;gap:8px}
+.fotos-viejas img{height:170px;width:auto;border-radius:6px;border:1px solid var(--linea)}
+
+/* ---------- maqueta ---------- */
+.maqueta-marco{margin:22px 0;border-radius:14px;overflow:hidden;border:1px solid #cfcfcf;box-shadow:0 10px 40px rgba(0,0,0,.12);background:#000}
+.barra-nav{background:#2b2b2b;padding:8px 12px;display:flex;gap:6px;align-items:center}
+.barra-nav i{width:10px;height:10px;border-radius:50%;background:#555;display:block}
+.barra-nav span{margin-left:10px;color:#bbb;font-size:12px;background:#1b1b1b;padding:3px 12px;border-radius:12px}
+.m{background:var(--negro);color:#fff;font-family:Montserrat,sans-serif}
+.m h1,.m h2,.m h3{text-transform:uppercase}
+.m .cab{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-bottom:1px solid #222}
+.m .cab img{height:54px;width:auto}
+.m .cab nav{display:none;gap:18px;font-size:12px;font-weight:600;letter-spacing:.06em}
+@media(min-width:900px){.m .cab nav{display:flex}}
+.btn{display:inline-block;background:var(--amarillo);color:#000;font:700 15px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:15px 26px;border-radius:4px}
+.btn.chico{padding:10px 16px;font-size:12.5px}
+.m .hero{display:grid;grid-template-columns:1fr;align-items:center;gap:0}
+@media(min-width:900px){.m .hero{grid-template-columns:1fr 1fr}}
+.m .hero .txt{padding:36px 24px}
+.m .hero h1{font-size:clamp(40px,7vw,66px);margin:0 0 6px;line-height:1}
+.m .hero h1 em{font-style:normal;color:var(--amarillo);display:block}
+.m .hero p{color:#cfcfcf;max-width:440px;margin:12px 0 22px}
+.m .hero .fino{font-size:12.5px;color:#9a9a9a;margin-top:12px}
+.m .hero img{width:100%;height:100%;object-fit:cover;max-height:640px}
+.m .afil{display:flex;gap:16px;align-items:center;margin-top:24px;opacity:.9}
+.m .afil img{height:40px;width:auto}
+.m .cifras{display:grid;grid-template-columns:repeat(2,1fr);background:var(--amarillo);color:#000}
+@media(min-width:900px){.m .cifras{grid-template-columns:repeat(4,1fr)}}
+.m .cifras div{padding:20px 16px;border-right:1px solid rgba(0,0,0,.12);border-bottom:1px solid rgba(0,0,0,.12)}
+.m .cifras b{display:block;font:700 34px Oswald,sans-serif;line-height:1}
+.m .cifras span{font-size:12.5px;font-weight:600}
+.m section{padding:46px 24px}
+.m section h2{font-size:clamp(30px,4.6vw,44px);margin:0 0 8px}
+.m section h2 em{font-style:normal;color:var(--amarillo)}
+.m .sub{color:#bdbdbd;margin:0 0 24px;max-width:620px}
+.m .claro{background:#fff;color:#111}
+.m .claro .sub{color:#555}
+.m .claro h2 em{color:#111;background:var(--amarillo);padding:0 6px}
+.m .pathway{display:grid;gap:26px;align-items:center}
+@media(min-width:900px){.m .pathway{grid-template-columns:.9fr 1.1fr}}
+.m .pathway img{border-radius:8px}
+.m .pasos{list-style:none;padding:0;margin:0;display:grid;gap:10px;counter-reset:p}
+.m .pasos li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;background:var(--gris);border-radius:8px;padding:14px}
+.m .claro .pasos li{background:#f3f3f3}
+.m .pasos li::before{counter-increment:p;content:counter(p);font:700 26px Oswald,sans-serif;color:#000;background:var(--amarillo);border-radius:6px;text-align:center;line-height:44px;height:44px}
+.m .pasos b{display:block;font:700 17px Oswald,sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.m .pasos span{font-size:13.5px;color:#bdbdbd}
+.m .claro .pasos span{color:#555}
+.m .logos-fila{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+.m .logos-fila img{height:26px;width:auto;background:#fff;border-radius:4px;padding:2px 4px}
+.m .fecha{border:2px solid var(--amarillo);border-radius:10px;padding:22px;text-align:center;max-width:640px;margin:0 auto}
+.m .fecha h3{font-size:34px;margin:0;color:var(--amarillo)}
+.m .fecha p{margin:8px 0 18px;color:#ddd}
+.m .tabla-edades{width:100%;border-collapse:collapse;margin:20px 0 0;font-size:13.5px}
+.m .tabla-edades th,.m .tabla-edades td{border-bottom:1px solid #2a2a2a;padding:9px 6px;text-align:left}
+.m .tabla-edades th{color:var(--amarillo);font:600 12px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.m .sedes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.m .sede{border:1px solid #e2e2e2;border-radius:8px;padding:14px;background:#fafafa}
+.m .sede b{font:700 18px Oswald,sans-serif;text-transform:uppercase;display:block}
+.m .sede span{font-size:13px;color:#555}
+.m .tener{display:grid;gap:10px;padding:0;margin:0;list-style:none}
+.m .tener li{padding-left:28px;position:relative}
+.m .tener li::before{content:"";position:absolute;left:0;top:5px;width:14px;height:14px;background:var(--amarillo);border-radius:3px}
+.m details{background:var(--gris);border-radius:8px;padding:14px 16px;margin-bottom:8px}
+.m summary{cursor:pointer;font-weight:700}
+.m details p{margin:10px 0 0;color:#cfcfcf;font-size:14px}
+.m .sponsors{display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:center}
+.m .sponsors img{height:38px;width:auto}
+.m .final{text-align:center;background:var(--amarillo);color:#000}
+.m .final h2 em{color:#000;text-decoration:underline}
+.m .final .btn{background:#000;color:var(--amarillo)}
+.m .pie{padding:22px 24px;font-size:12.5px;color:#9a9a9a;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;border-top:1px solid #222}
+.m .fija{position:sticky;bottom:0;background:rgba(11,11,11,.96);padding:10px 16px;display:flex;justify-content:center;border-top:1px solid #333}
+@media(min-width:900px){.m .fija{display:none}}
+.n-m{display:block;background:var(--nota);color:#4d4300;border:1px dashed #c9b200;border-radius:6px;font:500 12.5px/1.45 Montserrat,sans-serif;padding:8px 10px;margin:12px 0;text-transform:none;letter-spacing:0}
+.n-m b{color:#4d4300}
+
+table.cambios{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--linea);border-radius:10px;overflow:hidden;font-size:13.5px}
+table.cambios th,table.cambios td{padding:10px;border-bottom:1px solid var(--linea);text-align:left;vertical-align:top}
+table.cambios th{background:#fafafa;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--suave)}
+.tabla-scroll{overflow-x:auto}
+.preguntas{background:#fff;border:1px solid var(--linea);border-radius:10px;padding:8px 18px}
+.preguntas li{margin:10px 0}
+footer.doc-pie{color:var(--suave);font-size:12.5px;padding:40px 0 60px}
+</style>
+</head>
+<body>
+
+<div class="franja"><div class="envoltura"><b>Propuesta · athletumfc.com/tryouts</b> · 03-11-2026 · Propuesta para revisión. Nada se cambia en la web hasta la aprobación.</div></div>
+
+<main class="envoltura doc">
+
+<h2><small>Contexto</small>Por qué se rehace la página</h2>
+<p class="lead">En la reunión del 03-11 se acordó actualizar la página de tryouts antes de lanzar la pauta: va a ser la <b>página de destino de los anuncios de Meta</b> y el <b>enlace de la bio</b> de la cuenta nueva de Instagram. Se pidió revisar las fotos desactualizadas, los sponsors, la velocidad de carga, los botones duplicados y los horarios que ya no aplican, para que la familia haga un recorrido claro y termine en el registro de PlayMetrics.</p>
+
+<h2><small>1 · Diagnóstico</small>Cómo está hoy</h2>
+<p class="lead">Revisión de la página pública el 03-11-2026 (solo lectura). La velocidad se midió en un celular simulado con red móvil lenta (1,6 Mbps, 150 ms y CPU ×4, como Lighthouse) y en escritorio. La API de PageSpeed no respondió porque había superado la cuota del día.</p>
+
+<div class="kpis">
+  <div class="kpi"><div class="n mal">6,9 s</div><div class="l">hasta ver la imagen principal en el celular (LCP). Google considera "malo" más de 4 s</div></div>
+  <div class="kpi"><div class="n mal">8,1 s</div><div class="l">carga completa en el celular (escritorio: 1,3 s)</div></div>
+  <div class="kpi"><div class="n">52 · 1,2 MB</div><div class="l">peticiones y peso transferido en el celular: 24 scripts, 17 imágenes y 7 fuentes</div></div>
+  <div class="kpi"><div class="n mal">11</div><div class="l">botones al mismo enlace de PlayMetrics, con dos textos (Apply now y Register now) y colores distintos</div></div>
+  <div class="kpi"><div class="n mal">≈16</div><div class="l">pantallas de celular de alto (13.836 px), casi todo horarios de mayo de 2026</div></div>
+  <div class="kpi"><div class="n mal">0</div><div class="l">píxel de Meta: la pauta no puede medir quién se registra (Google Analytics sí está, vía Site Kit)</div></div>
+</div>
+
+<div class="hallazgos">
+
+  <div class="h con-img">
+    <div>
+      <h3><span class="etq alta">Alta</span>Horarios de mayo de 2026 todavía visibles</h3>
+      <ul>
+        <li>Se ven los bloques de <b>Cutler Bay / Palmetto Bay</b>, de niños y de niñas, del 16 al 22 de mayo. Mater Bay Academy y Goulds Park aparecen cada uno dos veces, una versión para celular y otra para escritorio.</li>
+        <li>Los de <b>Doral</b> (4, 5 y 9 de mayo) y <b>Davie</b> (6, 7, 11 y 12 de mayo) están ocultos en todos los dispositivos, pero siguen en el código y aumentan el peso.</li>
+        <li>En el bloque negro de niños, los títulos ("BOYS", "MATER BAY ACADEMY", "MAY 16", "WEEKDAY") son marrón muy oscuro (rgb 30, 24, 16) sobre negro (rgb 5, 5, 5): casi no se leen.</li>
+        <li>El título dice "Season 2026-27" y los tryouts oficiales son en mayo de 2027.</li>
+      </ul>
+    </div>
+    <img class="cap" src="assets/actual_horarios.webp" alt="Bloque de horarios actual" loading="lazy">
+  </div>
+
+  <div class="h con-img">
+    <div>
+      <h3><span class="etq alta">Alta</span>Fotos con la camiseta de la temporada pasada</h3>
+      <p>Todas las fotos de jugadores llevan la camiseta negra "PURA VIDA" de 2025-26, y la de arriba también la naranja. La camiseta de 2026-27 es <b>blanca con dorado</b>.</p>
+      <p>El 15-10 se cambiaron en un borrador las fotos de 2 jugadores que ya no están con Athletum, pero las de reemplazo también llevan la camiseta negra. Las fotos nuevas deberían salir del <b>Media Day del domingo 8-nov</b>.</p>
+      <p>El jugador de rastas de "Boys and girls are welcome" es el mismo del centro del HERO de la campaña. Conviene no repetirlo.</p>
+    </div>
+    <div class="fotos-viejas"><img src="assets/foto_vieja_1.webp" alt="Foto actual 1" loading="lazy"><img src="assets/foto_vieja_2.webp" alt="Foto actual 2" loading="lazy"></div>
+  </div>
+
+  <div class="h con-img">
+    <div>
+      <h3><span class="etq alta">Alta</span>Sponsors de 2022</h3>
+      <ul>
+        <li>En el pie de página están <b>Pura Vida Miami, Mia Cucina, St. Regis, IMECA y Spinex</b>, todos con logos subidos en noviembre de 2022.</li>
+        <li>El 14-10 Alessandro pidió quitar Spinex.</li>
+        <li>El sponsor de esta temporada es <b>Westime</b>, que no aparece.</li>
+        <li>Evian, Reserve Padel y Life Properties eran una propuesta para las camisetas 2027-28 y no son sponsors oficiales, así que no van en la web.</li>
+      </ul>
+    </div>
+    <img class="cap" src="assets/actual_sponsors.webp" alt="Pie de página actual con sponsors" loading="lazy">
+  </div>
+
+  <div class="h con-img">
+    <div>
+      <h3><span class="etq media">Media</span>Sedes sin confirmar e imágenes de otro sitio</h3>
+      <ul>
+        <li>Hay 8 sedes. <b>Palmetto Bay</b> y <b>Coral Gables</b> dicen "TBA", y el 14-10 Alessandro pidió quitarlas.</li>
+        <li>5 de las 8 fotos de sedes se cargan desde jacademymiami.com, de 75 a 171 KB cada una.</li>
+        <li>La imagen más pesada es el PNG de "Boys and girls are welcome", con 745 KB.</li>
+      </ul>
+    </div>
+    <img class="cap" src="assets/actual_ubicaciones.webp" alt="Sección de sedes actual" loading="lazy">
+  </div>
+
+  <div class="h con-img">
+    <div>
+      <h3><span class="etq media">Media</span>Textos y enlaces por corregir</h3>
+      <ul>
+        <li>La frase "Arrive 30 minutes before the tryout…" está <b>repetida</b> en "Please keep in mind".</li>
+        <li>El menú dice "MSL NEXT ID CAMP 2026-27" en lugar de "MLS NEXT".</li>
+        <li>Los logos de EDP Florida y South Florida Premier League enlazan a floridaacademyleague.com.</li>
+        <li>"Proud part of Miami's soccer community for over 15 years": Athletum se lanzó en 2023, así que los 15 años serían de Juventus Academy Miami y habría que decirlo así.</li>
+        <li>"Join one of the most prestigious soccer academies in the world": conviene revisarlo, porque puede leerse como si Athletum fuera la academia de Juventus.</li>
+        <li>Los enlaces a Instagram llevan a @athletumfc, que está bloqueada desde mayo.</li>
+        <li>Los botones son celestes (#00FFFF), fuera de la paleta de Athletum (amarillo, negro y blanco).</li>
+      </ul>
+    </div>
+    <img class="cap" src="assets/actual_keep.webp" alt="Sección Please keep in mind con frase repetida" loading="lazy">
+  </div>
+
+  <div class="h">
+    <div>
+      <h3><span class="etq media">Media</span>Recorrido hasta PlayMetrics</h3>
+      <p>Los 11 botones llevan al mismo registro de PlayMetrics (programa 94760). El recorrido funciona, pero la persona tiene que bajar entre horarios que no aplican.</p>
+      <p>Además, el enlace no lleva marcas UTM, así que en PlayMetrics no se sabe si el registro vino de la pauta, de la bio o del sitio. Sin píxel, Meta tampoco sabe quién tocó "Apply".</p>
+      <p>Según Analytics (21-sep→18-oct), la página tuvo 509 vistas y 20 inicios de formulario.</p>
+    </div>
+  </div>
+
+  <div class="h">
+    <div>
+      <h3><span class="etq conf">Ojo</span>Hay un borrador del 15-10 sin publicar</h3>
+      <p>El 15-10 se guardó en Elementor un <b>borrador</b> de esta página con los cambios que Alessandro pidió el 14-10:</p>
+      <ul>
+        <li>sin horarios, con el texto "Official tryouts · May 2027 · Dates coming soon";</li>
+        <li>sin Palmetto Bay ni Coral Gables;</li>
+        <li>2 fotos cambiadas;</li>
+        <li>la frase repetida quitada.</li>
+      </ul>
+      <p>La página pública sigue igual, así que ese borrador nunca se publicó. Antes de hacer los cambios nuevos se propone partir de ese borrador y reemplazar las fotos, que siguen siendo de la camiseta negra.</p>
+    </div>
+  </div>
+
+</div>
+
+<h2><small>2 · Propuesta</small>Maqueta de la nueva página</h2>
+<p class="lead">Es una sola página corta, pensada para quien llega desde un anuncio en el celular: qué es, por qué Athletum, cómo funciona y un solo botón. Los textos de la maqueta van en inglés, como la web. Las notas amarillas son internas y no van en la página.</p>
+
+<div class="maqueta-marco">
+  <div class="barra-nav"><i></i><i></i><i></i><span>athletumfc.com/tryouts</span></div>
+  <div class="m">
+
+    <div class="cab">
+      <img src="assets/logo_athletum.webp" alt="Athletum FC">
+      <nav><span>HOME</span><span>PROGRAMS</span><span>MLS NEXT</span><span>TRYOUTS</span><span>CONTACT</span></nav>
+      <a class="btn chico" href="#apply">Apply</a>
+    </div>
+
+    <div class="hero">
+      <div class="txt">
+        <h1>Athletum Tryouts <em>Boys and girls · Miami</em></h1>
+        <p>MLS NEXT and competitive teams for boys and girls in Miami. Apply once and we will contact you with your age group's tryout date and location.</p>
+        <a class="btn" id="apply" href="#apply">Apply for a tryout</a>
+        <div class="fino">Registration on PlayMetrics</div>
+        <div class="afil"><img src="assets/logo_jam.webp" alt="Juventus Academy Miami"><img src="assets/logo_mlsnext.webp" alt="MLS NEXT"></div>
+        <span class="n-m"><b>Nota:</b> un solo botón amarillo con el mismo texto en toda la página; aparece arriba, después de las fechas y fijo abajo en el celular. La imagen es el HERO de la campaña, que ya trae el titular "Your next level starts here"; la definitiva sería una foto real del Media Day (8-nov) sin texto encima. Se propone añadir "free" si el registro al tryout sigue siendo gratis (confirmar).</span>
+      </div>
+      <img src="assets/hero.webp" alt="Athletum players in the 2026-27 white and gold kit">
+    </div>
+
+    <div class="cifras">
+      <div><b>2023</b><span>in MLS NEXT since the 2023-24 season</span></div>
+      <div><b>12</b><span>MLS NEXT teams in 2026-27</span></div>
+      <div><b>Top 8</b><span>nationally, two seasons in a row</span></div>
+      <div><b>6</b><span>players signed by pro academies in 2026</span></div>
+    </div>
+    <div style="padding:0 24px"><span class="n-m"><b>Nota:</b> son cifras verificadas con fuente en el plan de la cuenta nueva (30-10). En la reunión se pidió un solo gráfico de datos: se propone que esta franja sea ese gráfico y que Alessandro la valide. No se usan "60+ partidos" ni los exalumnos en college porque no están confirmados.</span></div>
+
+    <section>
+      <h2>One club. <em>The whole pathway.</em></h2>
+      <p class="sub">From the Pre-Academy to MLS NEXT, and then on to college or the pros. Every player is placed at the level that fits them after the tryout.</p>
+      <div class="pathway">
+        <img src="assets/pathway.webp" alt="Athletum pathway: Pre-Academy, Competitive, MLS NEXT, College and Pro" loading="lazy">
+        <ol class="pasos">
+          <li><div><b>Pre-Academy</b><span>Juventus Academy Miami methodology for the youngest players.</span></div></li>
+          <li><div><b>Competitive</b><span>League play in EDP Florida, Florida Academy League, South Florida Premier League and National Academy League.</span>
+            <div class="logos-fila"><img src="assets/liga_edp.webp" alt="EDP Florida"><img src="assets/liga_fal.webp" alt="Florida Academy League"><img src="assets/liga_sfpl.webp" alt="South Florida Premier League"><img src="assets/liga_nal.webp" alt="National Academy League"></div></div></li>
+          <li><div><b>MLS NEXT</b><span>Homegrown and Academy divisions, against the top academies in the country.</span></div></li>
+          <li><div><b>College · Pro</b><span>The next step: college soccer (NCAA, NJCAA, NAIA) or professional soccer.</span></div></li>
+        </ol>
+      </div>
+      <span class="n-m"><b>Nota:</b> se usa el Pathway v4 (03-11, por aprobar). El definitivo agrega Juventus Residency al mismo nivel que MLS NEXT y espera el dibujo de Alessandro; cuando llegue se cambian la imagen y los 4 pasos. En "Competitive" se mencionan solo las 4 ligas; UPSL no va porque es de adultos.</span>
+    </section>
+
+    <section class="claro">
+      <h2>How it <em>works</em></h2>
+      <ol class="pasos">
+        <li><div><b>Apply</b><span>Create your PlayMetrics account and register for the tryout.</span></div></li>
+        <li><div><b>Get your date</b><span>You will receive a confirmation email with your age group's date, time and location.</span></div></li>
+        <li><div><b>Receive your invitation</b><span>After the tryout, allow a few days to a week to receive your invitation letter.</span></div></li>
+      </ol>
+      <span class="n-m"><b>Nota:</b> son los mismos 3 pasos de la página actual, con textos más cortos. "Follow us on Instagram for daily updates" vuelve cuando la cuenta nueva esté lista.</span>
+    </section>
+
+    <section>
+      <div class="fecha">
+        <h3>Official tryouts · May 2027</h3>
+        <p>Dates and locations are coming soon. Apply now and we will contact you with your age group's date and time.</p>
+        <a class="btn" href="#apply">Apply for a tryout</a>
+        <table class="tabla-edades">
+          <tr><th>Age group</th><th>Location</th><th>Date and time</th></tr>
+          <tr><td>To be confirmed</td><td>To be confirmed</td><td>To be confirmed</td></tr>
+        </table>
+      </div>
+      <span class="n-m"><b>Nota:</b> los horarios de 2026 no se reutilizan y no se inventan horas. Cuando el club confirme el calendario de 2027 se llena una sola tabla (categoría, sede, fecha y hora) en lugar de los bloques actuales por sede, que se ven distinto en celular y en escritorio.</span>
+    </section>
+
+    <section class="claro">
+      <h2>Locations</h2>
+      <div class="sedes">
+        <div class="sede"><b>Downtown Miami</b><span>Dorsey Park · 1701 NW 1st Ave, Miami, FL</span></div>
+        <div class="sede"><b>Doral</b><span>Doral Legacy Park · 11400 NW 82nd St, Doral, FL 33178</span></div>
+        <div class="sede"><b>Cutler Bay</b><span>Mater Bay Academy · 22025 SW 87th Ave, Cutler Bay, FL 33190</span></div>
+        <div class="sede"><b>Miramar</b><span>Miramar Regional Park · 16801 Miramar Pkwy, Miramar, FL 33027</span></div>
+        <div class="sede"><b>Davie</b><span>David Posnack JCC · 5850 S Pine Island Rd, Davie, FL 33328</span></div>
+        <div class="sede"><b>Fontainebleau</b><span>Ruben Dario Park</span></div>
+      </div>
+      <span class="n-m"><b>Nota:</b> son las 6 sedes que quedaron el 14-10, sin Palmetto Bay ni Coral Gables. La dirección de Dorsey Park se copió tal cual de la web; conviene confirmar el código postal y la dirección de Ruben Dario Park. Las tarjetas van sin foto para que la página sea liviana. Si se quieren fotos, deben subirse al propio sitio en WebP.</span>
+    </section>
+
+    <section>
+      <h2>Please <em>keep in mind</em></h2>
+      <ul class="tener">
+        <li>Players must wear a white or black jersey on the day of the tryout.</li>
+        <li>Arrive 30 minutes early to check in. Bibs with numbers will be provided.</li>
+        <li>To secure a spot for next season, register and pay as soon as possible after receiving your invitation.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+      <details><summary>Who can try out?</summary><p>Boys and girls. Each age group has its own date and time.</p></details>
+      <details><summary>When are the tryouts?</summary><p>The official tryouts are in May 2027. Apply now and we will contact you with the date and location for your age group.</p></details>
+      <details><summary>What should my child bring?</summary><p>A white or black jersey, cleats, shin guards and water. Please arrive 30 minutes early to check in.</p></details>
+      <details><summary>What happens after the tryout?</summary><p>You will receive an invitation letter within a few days to a week with the team and level for your player.</p></details>
+      <details><summary>Is Athletum part of Juventus Academy Miami?</summary><p>Athletum FC is the competitive and MLS NEXT program of the Juventus Academy Miami family.</p></details>
+      <span class="n-m"><b>Nota:</b> las respuestas 1, 2 y 4 salen de la página actual. "Cleats, shin guards and water" y la respuesta 5 son textos nuevos y hay que validarlos. Los años de nacimiento por categoría y si el registro es gratis se agregan cuando el club lo confirme.</span>
+    </section>
+
+    <section class="claro" style="text-align:center">
+      <h2>Our partners</h2>
+      <div class="sponsors" style="background:#111;border-radius:8px;padding:22px">
+        <img src="assets/sp_westime.webp" alt="Westime" style="height:72px">
+      </div>
+      <span class="n-m" style="text-align:left"><b>Nota:</b> Westime es el sponsor de 2026-27. Falta que Alessandro diga cuáles de los de 2022 siguen (Pura Vida Miami, Mia Cucina, St. Regis, IMECA). Spinex sale por su pedido del 14-10. La sección "Sponsors" del pie es global, así que el cambio se ve en todas las páginas del sitio.</span>
+    </section>
+
+    <section class="final">
+      <h2>Ready for <em>your next level?</em></h2>
+      <p style="margin:0 0 20px">Apply today. It only takes a few minutes.</p>
+      <a class="btn" href="#apply">Apply for a tryout</a>
+    </section>
+
+    <div class="pie">
+      <span>© 2026 Athletum FC</span>
+      <span>(786) 459-3464 · info@athletumfc.com</span>
+      <span>Instagram · TikTok · YouTube</span>
+    </div>
+
+    <div class="fija"><a class="btn" href="#apply" style="width:100%;text-align:center">Apply for a tryout</a></div>
+  </div>
+</div>
+
+<h2><small>3 · Recomendación técnica</small>Medición y velocidad</h2>
+<div class="hallazgos">
+  <div class="h"><div>
+    <h3>Píxel de Meta y evento de registro</h3>
+    <p>Se propone instalar el píxel de la cuenta publicitaria donde corra la campaña de tryouts (por confirmar cuál) en todo athletumfc.com. En /tryouts, el toque en "Apply for a tryout" se enviaría como evento <b>Lead</b>. Así Meta optimiza por personas que llegan al registro y no solo por clics, como ya se hace en jacademymiami.com/pre-academy.</p>
+  </div></div>
+  <div class="h"><div>
+    <h3>Enlaces con origen</h3>
+    <p>Se propone que el botón de la web lleve UTM al enlace de PlayMetrics (<code>utm_source=web&amp;utm_campaign=tryouts27</code>), y que la pauta y la bio de Instagram usen el suyo (<code>utm_source=meta</code> e <code>instagram_bio</code>). El programa 94760 y el token del club no cambian.</p>
+  </div></div>
+  <div class="h"><div>
+    <h3>Velocidad: meta de menos de 2,5 s en el celular</h3>
+    <ul>
+      <li>Borrar del código los bloques de horarios ocultos (Doral, Davie y los duplicados de celular y escritorio).</li>
+      <li>Imágenes en WebP subidas al propio sitio. La maqueta pesa 557 KB con todas sus imágenes, frente a los 1,9 MB de imágenes de hoy.</li>
+      <li>Imagen del hero sin carga diferida y con prioridad alta.</li>
+      <li>Desactivar en esta página los scripts y animaciones de Elementor que no se usan.</li>
+      <li>Actualizar los 16 plugins pendientes, con copia previa en UpdraftPlus.</li>
+    </ul>
+  </div></div>
+</div>
+
+<h2><small>4 · Lista de cambios</small>Qué se hace en el WordPress y quién</h2>
+<div class="tabla-scroll">
+<table class="cambios">
+  <tr><th>#</th><th>Cambio</th><th>Quién</th><th>Depende de</th></tr>
+  <tr><td>1</td><td>Copia de seguridad (UpdraftPlus) y retomar el borrador de Elementor del 15-10</td><td>Marketing (David)</td><td>Aprobación de la propuesta</td></tr>
+  <tr><td>2</td><td>Reordenar la página según la maqueta: hero, cifras, pathway, cómo funciona, fechas, sedes, a tener en cuenta, FAQ, partners y cierre</td><td>Marketing</td><td>Aprobación</td></tr>
+  <tr><td>3</td><td>Dejar un solo estilo de botón (amarillo, "Apply for a tryout") y una barra fija en el celular; quitar los 11 botones actuales</td><td>Marketing</td><td>Aprobación</td></tr>
+  <tr><td>4</td><td>Quitar los horarios de 2026 y los bloques ocultos; dejar "May 2027 · dates coming soon"</td><td>Marketing</td><td>Calendario 2027 del club (para la tabla)</td></tr>
+  <tr><td>5</td><td>Fotos con la camiseta blanca y dorada 2026-27 (hero y secciones), en WebP</td><td>David (Media Day 8-nov) → Marketing</td><td>Media Day; mientras tanto, el HERO de la campaña</td></tr>
+  <tr><td>6</td><td>Imagen y pasos del Pathway</td><td>Marketing</td><td>Dibujo de Alessandro (con Residency)</td></tr>
+  <tr><td>7</td><td>Sponsors del pie: sumar Westime, quitar Spinex y los que ya no estén</td><td>Marketing</td><td>Lista de Alessandro</td></tr>
+  <tr><td>8</td><td>Sedes: quitar Palmetto Bay y Coral Gables; fotos de sedes al propio sitio o sin foto</td><td>Marketing</td><td>Ya pedido el 14-10</td></tr>
+  <tr><td>9</td><td>Textos: frase repetida, "MSL" → "MLS" en el menú, "15 years", "prestigious academies"</td><td>Marketing</td><td>Validación de Alessandro</td></tr>
+  <tr><td>10</td><td>Enlaces del pie: EDP y SFPL a sus webs; Instagram a la cuenta nueva</td><td>Marketing</td><td>Cuenta nueva de IG lista</td></tr>
+  <tr><td>11</td><td>Píxel de Meta + evento Lead en el botón; UTM en los enlaces a PlayMetrics</td><td>Marketing</td><td>Cuenta publicitaria de la campaña</td></tr>
+  <tr><td>12</td><td>Velocidad: plugins, scripts de Elementor, caché</td><td>Programador (Frame) para los plugins; Marketing para el resto</td><td>Copia de seguridad</td></tr>
+  <tr><td>13</td><td>Revisar el formulario de PlayMetrics del programa 94760 (que pida la sede y la categoría, y la confirmación por correo)</td><td>Club (administración de PlayMetrics)</td><td>—</td></tr>
+  <tr><td>14</td><td>Publicar y poner el enlace en la bio de Instagram y en los anuncios</td><td>Marketing publica; David pone la bio y activa la pauta</td><td>"Aprobado publícalo"</td></tr>
+</table>
+</div>
+
+<h2><small>5 · Por confirmar</small>Preguntas para Alessandro</h2>
+<ol class="preguntas">
+  <li>¿Qué sponsors siguen en 2026-27, además de Westime?</li>
+  <li>¿Hay fechas o al menos semanas de los tryouts de mayo de 2027, y en qué sedes?</li>
+  <li>¿El registro al tryout sigue siendo gratis? ¿Se puede decir en la página?</li>
+  <li>¿Qué años de nacimiento entran por categoría para 2027-28, de niños y de niñas?</li>
+  <li>¿Se valida la franja de cifras (MLS NEXT desde 2023-24, 12 equipos, Top 8 dos temporadas seguidas, 6 a academias pro en 2026) como el gráfico de datos?</li>
+  <li>¿Cómo se dice la relación con Juventus Academy Miami ("15 years", "prestigious academies")?</li>
+  <li>¿Siguen las 6 sedes (Downtown, Doral, Cutler Bay, Miramar, Davie y Fontainebleau)?</li>
+  <li>¿Se mantiene UPSL en el menú del sitio? Es de adultos y no forma parte del pathway juvenil.</li>
+</ol>
+
+<footer class="doc-pie">
+  Fuentes:
+  <ul>
+    <li>página pública athletumfc.com/tryouts/ (03-11-2026);</li>
+    <li>medición propia con Chrome (<code>_pipeline/medir_y_capturar.js</code>, <code>_pipeline/medicion_03nov.json</code>);</li>
+    <li>reuniones del 14-10 y del 03-11 con Alessandro;</li>
+    <li>Google Analytics (21-sep→18-oct);</li>
+    <li>plan de la cuenta nueva de Athletum (cifras con fuente).</li>
+  </ul>
+  Imágenes de la maqueta: HERO v3 y Pathway v4 de la campaña de tryouts (por aprobar).
+</footer>
+
+</main>
+</body>
+</html>
